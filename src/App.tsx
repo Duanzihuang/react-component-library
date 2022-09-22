@@ -7,17 +7,24 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import Transition from './components/Transition/transition'
 import { useState } from 'react'
+import Upload from './components/Upload/index-test'
 
 library.add(fas)
 
-function App() {
+function App () {
   const [show, setShow] = useState(false)
   return (
     <div className='App'>
-      <Menu defaultIndex='0' onSelect={index => alert(index)} defaultOpenSubMenus={['2']}>
+      <Menu
+        defaultIndex='0'
+        onSelect={index => alert(index)}
+        defaultOpenSubMenus={['2']}
+      >
         {/* <Menu defaultIndex='0' onSelect={index => alert(index)} mode='horizontal'> */}
         <MenuItem index='0'>menu1</MenuItem>
-        <MenuItem index='1' disabled>menu2</MenuItem>
+        <MenuItem index='1' disabled>
+          menu2
+        </MenuItem>
         {/* 子Menu */}
         <SubMenu index='2' title='mens'>
           <MenuItem>color1</MenuItem>
@@ -42,21 +49,41 @@ function App() {
         Baidu Link
       </Button> */}
       {/* <Icon icon='arrow-down' theme='success' size='10x' /> */}
-      <Button size='lg' onClick={() => setShow(!show)}>Toggle</Button>
+      <Button size='lg' onClick={() => setShow(!show)}>
+        Toggle
+      </Button>
       <Transition in={show} timeout={300} animation='zoom-in-left'>
         <div>
-          <p>Edit <code>src/App.tsx</code> and save to reload</p>
-          <p>Edit <code>src/App.tsx</code> and save to reload</p>
-          <p>Edit <code>src/App.tsx</code> and save to reload</p>
-          <p>Edit <code>src/App.tsx</code> and save to reload</p>
-          <p>Edit <code>src/App.tsx</code> and save to reload</p>
-          <p>Edit <code>src/App.tsx</code> and save to reload</p>
-          <p>Edit <code>src/App.tsx</code> and save to reload</p>
+          <p>
+            Edit <code>src/App.tsx</code> and save to reload
+          </p>
+          <p>
+            Edit <code>src/App.tsx</code> and save to reload
+          </p>
+          <p>
+            Edit <code>src/App.tsx</code> and save to reload
+          </p>
+          <p>
+            Edit <code>src/App.tsx</code> and save to reload
+          </p>
+          <p>
+            Edit <code>src/App.tsx</code> and save to reload
+          </p>
+          <p>
+            Edit <code>src/App.tsx</code> and save to reload
+          </p>
+          <p>
+            Edit <code>src/App.tsx</code> and save to reload
+          </p>
         </div>
       </Transition>
       <Transition in={show} timeout={300} animation='zoom-in-top' wrapper>
-        <Button btnType='primary' size='lg'>A Large Button</Button>
+        <Button btnType='primary' size='lg'>
+          A Large Button
+        </Button>
       </Transition>
+      <hr />
+      <Upload />
     </div>
   )
 }
